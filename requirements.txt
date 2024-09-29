@@ -1,0 +1,11 @@
+mediapipe==0.10.14
+numpy==1.24.3
+opencv_contrib_python==4.10.0.84
+opencv_python==4.10.0.84
+Pillow==9.4.0
+Pillow==10.4.0
+protobuf==5.28.2
+python-dotenv==1.0.1
+streamlit==1.26.0
+streamlit_extras==0.4.7
+~treamlit==1.38.0
