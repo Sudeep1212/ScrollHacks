@@ -1,9 +1,7 @@
 opencv-python
-Pillow
-numpy
+pillow
+mediapipe
 google-generativeai
 streamlit
 streamlit-extras
-mediapipe
-python-dotenv
-warnings
+numpy
