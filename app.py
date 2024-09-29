@@ -6,7 +6,7 @@ import google.generativeai as genai
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
 from mediapipe.python.solutions import hands, drawing_utils
-from dotenv import load_dotenv
+
 import warnings
 
 warnings.filterwarnings(action='ignore')
