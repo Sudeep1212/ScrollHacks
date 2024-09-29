@@ -13,9 +13,12 @@ warnings.filterwarnings(action='ignore')
 
 st.set_page_config(page_title='AI App', layout="wide")
 
+GOOGLE_API_KEY="AIzaSyBiAMiZ0GSqTtaMIeBXzuv38-JHJJ8sy8w"
+#deployment error
+
 class DrawInAir:
     def __init__(self):
-        load_dotenv()
+        
 
         self.cap = cv2.VideoCapture(0)
         self.cap.set(propId=cv2.CAP_PROP_FRAME_WIDTH, value=950)
@@ -117,7 +120,7 @@ class DrawInAir:
     def analyze_image_with_genai(self):
         imgCanvas = cv2.cvtColor(self.imgCanvas, cv2.COLOR_BGR2RGB)
         imgCanvas = PIL.Image.fromarray(imgCanvas)
-        genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
+        genai.configure(api_key=GOOGLE_API_KEY)
         model = genai.GenerativeModel(model_name='gemini-1.5-flash')
         prompt = "Analyze the image and provide the following:\n" \
          "* If a mathematical equation is present:\n" \
@@ -177,7 +180,7 @@ class DrawInAir:
 def image_reader():
     st.header("Image Reader Application")
 
-    api_key = os.getenv('GOOGLE_API_KEY')
+    api_key = GOOGLE_API_KEY
     genai.configure(api_key=api_key)
 
     def get_gemini_response(input_text, image, prompt):
@@ -211,7 +214,7 @@ def plot_crafter():
     
     game_prompt = st.text_area("Enter the game plot or theme:", height=150)
     if st.button("Generate Plot"):
-        genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+        genai.configure(api_key=GOOGLE_API_KEY)
         model = genai.GenerativeModel('gemini-1.5-flash')
         prompt = f"Create a detailed plot based on the theme: {game_prompt}"
         response = model.generate_content([prompt])
