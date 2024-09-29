@@ -8,4 +8,4 @@ protobuf==5.28.2
 python-dotenv==1.0.1
 streamlit==1.26.0
 streamlit_extras==0.4.7
-~treamlit==1.38.0
+streamlit==1.38.0
